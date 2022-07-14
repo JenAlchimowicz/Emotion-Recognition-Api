@@ -131,3 +131,14 @@ dmypy.json
 
 # My project specific stuff
 history/
+
+# To avoid commiting data
+data/predictions/*
+!data/predictions/.gitkeep
+
+data/raw_data/*
+!data/raw_data/.gitkeep
+
+data/train_val_test_split/*
+!data/train_val_test_split/.gitkeep
+
