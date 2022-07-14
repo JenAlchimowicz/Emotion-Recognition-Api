@@ -1,4 +1,5 @@
-2022-07-12 10:16:50,833 : INFO : scripts/predict.py : ---------------- Start prediction script ----------------
-2022-07-12 10:16:51,268 : INFO : scripts/predict.py : Model created
-2022-07-12 10:16:51,270 : INFO : scripts/predict.py : File type detected as: video
-2022-07-12 10:17:08,976 : INFO : scripts/predict.py : Predictions made
+2022-07-14 12:41:36,251 : INFO : scripts/predict.py : ---------------- Start prediction script ----------------
+2022-07-14 12:41:36,854 : INFO : scripts/predict.py : Model created
+2022-07-14 12:41:36,855 : INFO : scripts/predict.py : File type detected as: image
+2022-07-14 12:41:37,492 : INFO : scripts/predict.py : Predictions made
+2022-07-14 12:41:40,661 : INFO : scripts/predict.py : Prediction image saved in data/predictions/prediction0.jpg
