@@ -1,0 +1,4 @@
+2022-07-12 10:16:50,833 : INFO : scripts/predict.py : ---------------- Start prediction script ----------------
+2022-07-12 10:16:51,268 : INFO : scripts/predict.py : Model created
+2022-07-12 10:16:51,270 : INFO : scripts/predict.py : File type detected as: video
+2022-07-12 10:17:08,976 : INFO : scripts/predict.py : Predictions made

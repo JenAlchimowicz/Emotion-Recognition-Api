@@ -1,0 +1,6 @@
+2022-07-12 10:19:28,596 : INFO : scripts/etl.py : ----------------------- Start ETL -----------------------
+2022-07-12 10:19:31,242 : INFO : scripts/etl.py : Data loaded from: data/raw_data/fer2013.csv
+2022-07-12 10:19:52,806 : INFO : scripts/etl.py : Image data transformed to pytorch tensor | data type: <class 'torch.Tensor'>, data shape: torch.Size([35887, 1, 48, 48])
+2022-07-12 10:19:52,946 : INFO : scripts/etl.py : Data split to train/val/test sets
+2022-07-12 10:19:52,946 : INFO : scripts/etl.py : Train set shape: torch.Size([28709, 1, 48, 48]), val test shape: torch.Size([3589, 1, 48, 48]), test set shape: torch.Size([3589, 1, 48, 48])
+2022-07-12 10:19:53,206 : INFO : scripts/etl.py : Files saved in data/train_val_test_split/
