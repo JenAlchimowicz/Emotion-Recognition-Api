@@ -1,0 +1,46 @@
+etl:
+  raw_data_path: "data/raw_data/fer2013.csv"
+  output_folder_path: "data/train_val_test_split/"
+
+train:
+  data_path: "data/train_val_test_split/"
+  epochs: 2
+  batch_size: 256
+  start_lr: 0.01
+  model_path: "trained_models/ED_model0.pt"
+
+predict:
+  file_path: "data/predictions/test_short.mov"
+  model_type: "affectnet8"
+  model_path: "trained_models/affecnet8.pth"
+  export_path: "data/predictions/"
+  export_file_name: "prediction0"
+  save_file: True
+  show_result: True
+
+
+
+
+#########################
+# Argument descriptions #
+#########################
+
+# etl:
+#   raw_data_path [srt] - the path to the raw data file (in this case should be the fer2013 datasets)
+#   output_folder_path [srt] - path to the folder where you want to save the train/val/test sets
+
+# train:
+#   data_path [srt] - path to the train/val/test split folder
+#   epochs [int] - number of epochs to run the training for
+#   batch_size [int] - batch size
+#   start_lr [float] - starting learning rate (training file uses dynamic learning rate so it will change as the training progresses)
+#   model_path [srt] - file to save the model (not just the folder)
+
+# predict:
+#   file_path [str] - path to the image to predict
+#   model_type [str] - either 'affectnet8' or 'ED'
+#   model_path [str] - path to the model (params have to be consistent with the model type specified in model_type)
+#   export_path [str] - path to the folder where the file should be saved (e.g. 'data/predictions/')
+#   export_file_name [str] - name of the file to save (without extension, e.g. 'prediction0')
+#   save_file [bool] - whether the output file should be saved
+#   show_result [bool] - whether the output should be displayed on the screen
