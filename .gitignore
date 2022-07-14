@@ -142,3 +142,6 @@ data/raw_data/*
 data/train_val_test_split/*
 !data/train_val_test_split/.gitkeep
 
+trained_models/*
+!trained_models/.gitkeep
+
