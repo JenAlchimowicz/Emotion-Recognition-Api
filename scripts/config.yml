@@ -10,7 +10,7 @@ train:
   model_path: "trained_models/ED_model0.pt"
 
 predict:
-  file_path: "data/predictions/sukhs.jpg"
+  file_path: "data/predictions/test_short.mov"
   model_type: "affectnet8"
   model_path: "trained_models/affecnet8.pth"
   export_path: "data/predictions/"
