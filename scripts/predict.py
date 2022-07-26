@@ -7,7 +7,6 @@ import argparse
 import filetype
 import os
 
-
 import sys
 import os.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)))
@@ -43,7 +42,7 @@ def parse_args():
 
 
 
-class Model_pred():
+class Model_pred:
     def __init__(self, MODEL_TYPE, MODEL_PATH):
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
         if MODEL_TYPE == 'affectnet8':
@@ -84,7 +83,7 @@ class Model_pred():
         if file_type == 'image':
             img0 = Image.open(path).convert('RGB')
             img_cv = np.array(img0) 
-            img_cv = img_cv[:, :, ::-1].copy() 
+            img_cv = img_cv[:, :, ::-1].copy()
             
             faces = self.detect_faces(img0)
             preds = []
