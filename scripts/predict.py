@@ -12,7 +12,7 @@ import os.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)))
 
 from utils.utils import parse_config, configure_logger
-from architectures.my_model import ED_model
+from architectures.ED_model import ED_model
 from architectures.DAN import DAN
 
 '''
