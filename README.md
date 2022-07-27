@@ -48,12 +48,11 @@ This project identifies faces in an image or video and classifies each face into
 
 Second, the project was developed for learning purposes. Particular emphasis was put on development methods used in the workplace, such as testing, logging, continous integration and developing an API.
 
-<a><img src=https://user-images.githubusercontent.com/74935134/181285010-1695aef2-388d-4d69-bcb0-9dafa6166872.png align="left" height="240" width="480" ></a>
 </br>
-<a><img src=https://user-images.githubusercontent.com/74935134/181285056-0eabbb21-b71e-4906-8f07-92bf94088c49.png align="right" height="200" width="320" ></a>
-</br></br></br></br></br></br></br></br></br>
 
-
+<p align="center">
+  <img width="600" src=https://user-images.githubusercontent.com/74935134/181285010-1695aef2-388d-4d69-bcb0-9dafa6166872.png>
+</p>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
