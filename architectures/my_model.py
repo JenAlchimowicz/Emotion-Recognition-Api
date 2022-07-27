@@ -88,7 +88,7 @@ class ED_model(nn.Module):
 
         x = F.relu(self.bn13(self.conv13(x)))
         x = F.relu(self.bn14(self.conv14(x)))
-        # x = torch.flatten(x, start_dim=1)
+        x = torch.flatten(x, start_dim=1)
         x = F.relu(self.fc1(x))
         x = F.relu(self.fc2(x))
         x = self.fc3(x)
