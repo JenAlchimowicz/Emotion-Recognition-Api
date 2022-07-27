@@ -37,7 +37,7 @@
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-# Project description
+## :pencil: Project description
 
 This project identifies faces in an image or video and classifies each face into one of the 7 emotions: ['neutral', 'happy', 'sad', 'surprise', 'fear', 'disgust', 'anger', 'contempt']. For modelling purposes the primary libraries used where PyTorch and OpenCV. For development purposes the primary tools used were pytest, black code formatter, GitHub Actions, FastAPI and Deta.
 
@@ -57,7 +57,8 @@ Second, the project was developed for learning purposes. Particular emphasis was
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 
-# Folder structure
+## :cactus: Folder structure
+Code structure tree, shows the exact content of the project
 ```
 ├── data
 │   ├── raw_data
@@ -95,6 +96,7 @@ Second, the project was developed for learning purposes. Particular emphasis was
         └── ed_app_workflow.yml
 
 ```
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
 # Usage
 
