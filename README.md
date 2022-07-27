@@ -48,8 +48,8 @@ This project identifies faces in an image or video and classifies each face into
 
 Second, the project was developed for learning purposes. Particular emphasis was put on development methods used in the workplace, such as testing, logging, continous integration and developing an API.
 
-<a><img src=https://user-images.githubusercontent.com/74935134/181285010-1695aef2-388d-4d69-bcb0-9dafa6166872.png align="left" height="250" width="500" ></a>
-<a><img src=https://user-images.githubusercontent.com/74935134/181285056-0eabbb21-b71e-4906-8f07-92bf94088c49.png align="right" height="250" width="335" ></a>
+<a><img src=https://user-images.githubusercontent.com/74935134/181285010-1695aef2-388d-4d69-bcb0-9dafa6166872.png align="left" height="240" width="500" ></a>
+<a><img src=https://user-images.githubusercontent.com/74935134/181285056-0eabbb21-b71e-4906-8f07-92bf94088c49.png align="right" height="240" width="335" ></a>
 </br></br></br></br></br></br></br></br></br>
 
 
