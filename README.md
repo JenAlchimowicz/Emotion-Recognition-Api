@@ -18,26 +18,26 @@
 
 ## :book: Table of contents
 <ol>
-  <li><a href="project-description"> ➤ Project description</a></li>
+  <li><a href="#project-description"> ➤ Project description</a></li>
   <li><a href="#folder-structure"> ➤ Folder Structure</a></li>
   <li><a href="#usage"> ➤ Usage</a></li>
     <ul>
-      <li><a href="online-api"> Online API</a></li>
-      <li><a href="local-usage"> Local usage</a></li>
+      <li><a href="#online-api"> Online API</a></li>
+      <li><a href="#local-usage"> Local usage</a></li>
     </ul>
     <li><a href="#development-process"> ➤ Development process</a></li>
     <ul>
-      <li><a href="methods"> Methods </a></li>
-      <li><a href="tools"> Tools </a></li>
-      <li><a href="datasets"> Datasets </a></li>
-      <li><a href="improvement-areas"> Improvement areas </a></li>
+      <li><a href="#methods"> Methods </a></li>
+      <li><a href="#tools"> Tools </a></li>
+      <li><a href="#datasets"> Datasets </a></li>
+      <li><a href="#improvement-areas"> Improvement areas </a></li>
     </ul>
     <li><a href="#key-sources"> ➤ References </a></li>
 </ol>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## :pencil: Project description
+<h2 id="project-description"> :pencil: Project description </h2>
 
 This project identifies faces in an image or video and classifies each face into one of the 7 emotions: ['neutral', 'happy', 'sad', 'surprise', 'fear', 'disgust', 'anger', 'contempt']. For modelling purposes the primary libraries used where PyTorch and OpenCV. For development purposes the primary tools used were pytest, black code formatter, GitHub Actions, FastAPI and Deta.
 
@@ -56,9 +56,9 @@ Second, the project was developed for learning purposes. Particular emphasis was
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-
-## :cactus: Folder structure
+<h2 id="folder-structure"> :cactus: Folder structure </h2>
 Code structure tree, shows the exact content of the project
+
 ```
 ├── data
 │   ├── raw_data
@@ -96,16 +96,18 @@ Code structure tree, shows the exact content of the project
         └── ed_app_workflow.yml
 
 ```
+
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## :hammer: Usage
+<h2 id="usage"> :hammer: Usage </h2>
 
-### Online API
+<h3 id="online-api"> Online API </h3>
 Use link: ADD HERE BIG
 
 Example output: ADD IMAGE HERE
 
-### Local usage
+<h3 id="local-usage"> Local usage </h3>
+
 1. Git Clone the repo
 ```
 git clone https://github.com/JenAlchimowicz/Emotion-Recognition-Api.git
@@ -137,7 +139,7 @@ pip install –r requirements.txt
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## :brain: Development process
+<h2 id="development-process"> :brain: Development process </h2>
 
 ### :electron: Methods
 Emotion recognition is a two-step process:
@@ -172,10 +174,9 @@ There are a few emotion recognition datasets out there. The three considered in 
 ## :open_book: Key sources
 - Structure of the project and key development tools: Geoffrey Hung's articles [here](https://towardsdatascience.com/from-jupyter-notebook-to-sc-582978d3c0c) and [here](https://towardsdatascience.com/from-scripts-to-prediction-api-2372c95fb7c7)
 - DAN paper by Wen, Zhengyao and Lin, Wenzhong and Wang, Tao and Xu, Ge: https://arxiv.org/pdf/2109.07270.pdf
-- Testing webinar: https://www.youtube.com/watch?v=ytI4Xapvx1w
-- Haar implemetation: https://www.youtube.com/watch?v=7IFhsbfby9s
+- Webinar on testing: https://www.youtube.com/watch?v=ytI4Xapvx1w
+- Haar Classifier implemetation: https://www.youtube.com/watch?v=7IFhsbfby9s
 - Readme design: https://github.com/ma-shamshiri/Human-Activity-Recognition#readme
 - FastAPI tutorial: https://github.com/aniketmaurya/tensorflow-fastapi-starter-pack
-
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
