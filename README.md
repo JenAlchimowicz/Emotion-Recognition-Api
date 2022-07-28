@@ -98,15 +98,49 @@ Code structure tree, shows the exact content of the project
 ```
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-# Usage
+## :hammer: Usage
 
-  ## Online API
-  just use link
+### Online API
+Use link: ADD HERE BIG
 
-  ## Local usage
-  
- 
+Example output: ADD IMAGE HERE
+
+### Local usage
+1. Git Clone the repo
+```
+git clone https://github.com/JenAlchimowicz/Emotion-Recognition-Api.git
+```
+
+2. Go to project root folder
+```
+cd Emotion-Recognition-Api
+```
+
+3. Setup virtual environment (venv + pip)
+```
+python -m venv venv
+source venv/bin/activate
+pip install –r requirements.txt
+```
+
+</br>
+
+4. **There are 2 ways you can continue from here. You can:**
+  - [**recommended**] Use a pretrained [DAN](https://github.com/yaoing/DAN) model (DAN was trained on [AffectNet](http://mohammadmahoor.com/affectnet/), one of the best emotion recognition datasets available)
+  - [**optional**] Train a new model on [fer2013](https://www.kaggle.com/datasets/deadskull7/fer2013) dataset and use that to make predictions
+
+</br>
+    
+  Use a pretrained [DAN](https://github.com/yaoing/DAN) model |  Train a new model
+:----------------------------------------------------:|:----------------------------------------------------:
+| 1. Download the model weights from [here](https://drive.google.com/file/d/1uHNADViICyJEjJljv747nfvrGu12kjtu/view?usp=sharing) <br/><br/>2. Save in ```trained_models``` directory <br/><br/>3. Modify the ```file_path``` in ```config.yaml``` file to the image/video you want to make predictions on <br/><br/>4. Run ```python scripts/predict.py``` | 1. Run ```python scripts/etl.py``` <br/><br/>2. Run ```python scripts/train.py``` (you can modify number of epochs and other parameters in ```config.yaml```) <br/><br/>3. Modify the ```file_path``` in ```config.yaml``` file to <br/>the image/video you want to make predictions on <br/><br/>4. Run ```python scripts/predict.py``` |
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
 # Development process
+
+## Methods
+
 ## Tools
 ## Datasets
 ## Improvement areas
