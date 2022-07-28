@@ -73,23 +73,23 @@ class Model_pred:
         self.face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_default.xml')
 
 
-    def detect_faces(self, img_):
+    def detect_faces(self, img_:Image.Image):
         img_ = cv2.cvtColor(np.asarray(img_),cv2.COLOR_RGB2BGR)
-        faces = self.face_cascade.detectMultiScale(img_, 1.2, 6)
+        faces = self.face_cascade.detectMultiScale(img_, 1.2, 6) #1.2, 6
         return faces
     
     def predict_emotion(self, path, file_type):
 
         if file_type == 'image':
-            img0 = Image.open(path).convert('RGB')
-            img_cv = np.array(img0) 
+            img_pil = Image.open(path).convert('RGB')
+            img_cv = np.array(img_pil) 
             img_cv = img_cv[:, :, ::-1].copy()
             
-            faces = self.detect_faces(img0)
+            faces = self.detect_faces(img_pil)
             preds = []
 
             for (x,y,w,h) in faces:
-                cropped_face = img0.crop((x,y, x+w, y+h))
+                cropped_face = img_pil.crop((x,y, x+w, y+h))
                 cropped_face = self.data_transforms(cropped_face).unsqueeze(0)
 
                 with torch.set_grad_enabled(False):

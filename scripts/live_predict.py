@@ -19,6 +19,7 @@ Aguments:
 
 Outputs:
     - Live prediction displayed on the screen. Does not save videos, to save a predicted clip first record a video and then use the more developed script 'predict.py'
+    - Close prediction window by pressing 'q'
 '''
 
 
