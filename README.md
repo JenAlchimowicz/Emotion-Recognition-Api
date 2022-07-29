@@ -119,7 +119,7 @@ cd Emotion-Recognition-Api
 ```
 python -m venv venv
 source venv/bin/activate
-pip install –r requirements.txt
+pip install -r requirements.txt
 ```
 
 4. Download the weights of pretrained [DAN](https://github.com/yaoing/DAN) model (training from scratch also possible see section xx)
