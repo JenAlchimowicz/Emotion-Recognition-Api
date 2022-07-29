@@ -18,26 +18,27 @@
 
 ## :book: Table of contents
 <ol>
-  <li><a href="project-description"> ➤ Project description</a></li>
+  <li><a href="#project-description"> ➤ Project description</a></li>
   <li><a href="#folder-structure"> ➤ Folder Structure</a></li>
   <li><a href="#usage"> ➤ Usage</a></li>
     <ul>
-      <li><a href="online-api"> Online API</a></li>
-      <li><a href="local-usage"> Local usage</a></li>
+      <li><a href="#using-api"> Using the API</a></li>
+      <li><a href="#running-scripts"> Running scripts</a></li>
+      <li><a href="#training"> Training a new model</a></li>
     </ul>
     <li><a href="#development-process"> ➤ Development process</a></li>
     <ul>
-      <li><a href="tools"> Tools </a></li>
-      <li><a href="datasets"> Datasets </a></li>
-      <li><a href="improvement-areas"> Improvement areas </a></li>
+      <li><a href="#methods"> Methods </a></li>
+      <li><a href="#tools"> Tools </a></li>
+      <li><a href="#datasets"> Datasets </a></li>
+      <li><a href="#improvement-areas"> Improvement areas </a></li>
     </ul>
-    <li><a href="#references"> ➤ References </a></li>
-    <li><a href="#one-more-for-looks"> ➤ Something else </a></li>
+    <li><a href="#key-resources"> ➤ Key sources </a></li>
 </ol>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-## :pencil: Project description
+<h2 id="project-description"> :pencil: Project description </h2>
 
 This project identifies faces in an image or video and classifies each face into one of the 7 emotions: ['neutral', 'happy', 'sad', 'surprise', 'fear', 'disgust', 'anger', 'contempt']. For modelling purposes the primary libraries used where PyTorch and OpenCV. For development purposes the primary tools used were pytest, black code formatter, GitHub Actions, FastAPI and Deta.
 
@@ -56,9 +57,9 @@ Second, the project was developed for learning purposes. Particular emphasis was
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-
-## :cactus: Folder structure
+<h2 id="folder-structure"> :cactus: Folder structure </h2>
 Code structure tree, shows the exact content of the project
+
 ```
 ├── data
 │   ├── raw_data
@@ -96,22 +97,128 @@ Code structure tree, shows the exact content of the project
         └── ed_app_workflow.yml
 
 ```
+
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-# Usage
+<h2 id="usage"> :hammer: Usage </h2>
 
-  ## Online API
-  just use link
+<h3 id="using-api"> :robot: Using the API </h3>
 
-  ## Local usage
+1. Git Clone the repo
+```
+git clone https://github.com/JenAlchimowicz/Emotion-Recognition-Api.git
+```
+
+2. Go to project root folder
+```
+cd Emotion-Recognition-Api
+```
+
+3. Setup virtual environment (venv + pip)
+```
+python -m venv venv
+source venv/bin/activate
+pip install –r requirements.txt
+```
+
+4. Download the weights of pretrained [DAN](https://github.com/yaoing/DAN) model (training from scratch also possible see section xx)
+```
+python scripts/get_model.py
+```
+
+5. Start a local server using uvicorn
+```
+python api_utility/main.py
+```
+
+6. Go to the displayed URL (default is ```http://127.0.0.1:8000```)
+
+7. Make predictions. Example output:
+
+API output             |  Running scripts output
+:-------------------------:|:-------------------------:
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <img width="250" src="https://user-images.githubusercontent.com/74935134/181781389-24063ec4-b9c8-40d6-83a8-10284f27aa1f.png"> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> |  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <img width="400" alt="Screenshot 2022-07-29 at 16 38 23" src="https://user-images.githubusercontent.com/74935134/181783667-e4b01e3e-d742-4065-bb65-51a6065582b1.png"> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+
+<h3 id="running-scripts"> :books: [ALTERNATIVE] Running scripts </h3>
+
+1. Complete steps 1-4
+
+2. Set ```file_path``` in ```config.yaml``` to your image or video path
+
+3. Run predictions
+```
+python scripts/predict.py
+```
+
+<h3 id="training"> :muscle: [OPTIONAL] Training a new model </h3>
+
+1. Complete steps 1-3
+
+2. Prepare the [fer2013](https://www.kaggle.com/datasets/deadskull7/fer2013) dataset for training
+```
+python scripts/etl.py
+```
+
+2. Run the training procedure. You can change arguments like number of epochs or learning rate in the ```config.yaml``` file.
+```
+python scripts/train.py
+```
+
+5. Make sure the ```config.yaml``` file points to your new trained model and make predictions as before
+```
+python scripts/predict.py
+```
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+<h2 id="development-process"> :electron: Development process </h2>
+
+<h3 id="methods"> :brain: Methods </h3>
+
+Emotion recognition is a two-step process:
+  1. Detect faces in an image
+  2. Classify each face into one of the emotions
   
- 
-# Development process
-## Tools
-## Datasets
-## Improvement areas
+In this project I relied heavily on pretrained models. For face dection I relied on [Haar Cascade Classifier](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html), and for emotion classification I relied on [DAN](https://github.com/yaoing/DAN) pretrained on [AffectNet](http://mohammadmahoor.com/affectnet/) dataset. I used Haar Cascade because developing a face detection system was not the goal of this project and Haar Cascade provides a stable, easy to implement solution. I used DAN because it is pretrained on an unaccesible to me dataset, and provides better performance than my own implementations on fer2013 dataset.
+  
+<h3 id="tools"> :hammer_and_wrench: Tools </h3>
 
-# References
-# One more for looks
+- ```Why PyTorch?``` - most semi-publicly accessible emotion classification datasets are restricted to academics, which mainly use PyTorch. Therefore, I expected to find more good pretrained models available in PyTorch than e.g. Tensorflow
+- ```Why config.yaml?``` - in machine learning the data processing, splitting, transforming has as big of an impact on the final result as the choice of model and training parameters. Since I use separate scripts for each of those steps, one would have to remember which arguments were used to run each of the scripts to be able to reproduce a specific results. A config.yaml file puts all arguments together and ensures easy tracking and reproducability.
+- ```Why logging?``` - logging leaves an easy to track trace of what was happening during a run. We could print out the results to the command line but in case I want to run e.g. 20 models, the print outputs would quickly become messy. Logging is a clean solution to save all the information in separate files.
+- ```Why pytest?``` - testing is crucial for development. Pytest is easy to follow, easy to trace and provides good error reporting.
+- ```Why GitHub actions?``` - this is a small project, therefore, quick set-up and simplicity of use is a big advantage. I believed it to be the right tool for the job
+- ```Why black?``` - clarity and standardization make it easier for everyone to read code
+
+<h3 id="datasets"> :floppy_disk: Datasets </h3>
+
+There are a few emotion recognition datasets out there. The three considered in the project were:
+- [fer2013](https://www.kaggle.com/datasets/deadskull7/fer2013) [publicly available] - a datset of 35k grayscale 48x48 images annotated with one of 7 emotions. The dataset suffers from a large amount of mislabeled data and the low quality of input images (grayscale and small size).
+- [AffectNet](http://mohammadmahoor.com/affectnet/) [available to academics only] - a dataset of 440K RGB images annotated for one of 7 emotions along with the intensity of valence and arousal. State of the art. **Currently unavailable to me**.
+- [Real-world Affective Faces](http://www.whdeng.cn/raf/model1.html) [available to academics only] - a dataset of 30k RGB images annotated for two of the most prelevant of 7 emotions. **Recently gained access to this dataset**.
+
+<h3 id="improvement-areas"> :rocket: Improvement areas </h3>
+
+- Experiment with the [Real-world Affective Faces](http://www.whdeng.cn/raf/model1.html) dataset
+- Replace Haar Cascade with e.g. YOLO
+- Increase test coverage
+- Deploy API online
+- Any suggestions are welcome :)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+<h2 id="key-resources"> :open_book: Key resources </h2>
+
+- Structure of the project and key development tools: Geoffrey Hung's articles [here](https://towardsdatascience.com/from-jupyter-notebook-to-sc-582978d3c0c) and [here](https://towardsdatascience.com/from-scripts-to-prediction-api-2372c95fb7c7)
+- DAN paper by Wen, Zhengyao and Lin, Wenzhong and Wang, Tao and Xu, Ge: https://arxiv.org/pdf/2109.07270.pdf
+- Webinar on testing: https://www.youtube.com/watch?v=ytI4Xapvx1w
+- Haar Classifier implemetation: https://www.youtube.com/watch?v=7IFhsbfby9s
+- Readme design: https://github.com/ma-shamshiri/Human-Activity-Recognition#readme
+- FastAPI tutorial: https://github.com/aniketmaurya/tensorflow-fastapi-starter-pack
+
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+<p align="center">
+  <img src=https://user-images.githubusercontent.com/74935134/181792028-a7b21f9c-618b-45c1-892a-ad2faf0398c5.gif>
+</p>
