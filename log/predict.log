@@ -1,4 +1,4 @@
-2022-07-28 10:32:11,867 : INFO : scripts/predict.py : ---------------- Start prediction script ----------------
-2022-07-28 10:32:12,409 : INFO : scripts/predict.py : Model created
-2022-07-28 10:32:12,410 : INFO : scripts/predict.py : File type detected as: image
-2022-07-28 10:32:13,365 : INFO : scripts/predict.py : Predictions made
+2022-07-29 16:38:06,499 : INFO : scripts/predict.py : ---------------- Start prediction script ----------------
+2022-07-29 16:38:06,959 : INFO : scripts/predict.py : Model created
+2022-07-29 16:38:06,959 : INFO : scripts/predict.py : File type detected as: image
+2022-07-29 16:38:07,682 : INFO : scripts/predict.py : Predictions made
