@@ -155,6 +155,11 @@ python scripts/predict.py
 
 1. Complete steps 1-3
 
+2. Prepare the [fer2013](https://www.kaggle.com/datasets/deadskull7/fer2013) dataset for training
+```
+python scripts/etl.py
+```
+
 2. Run the training procedure. You can change arguments like number of epochs or learning rate in the ```config.yaml``` file.
 ```
 python scripts/train.py
@@ -213,3 +218,7 @@ There are a few emotion recognition datasets out there. The three considered in 
 - FastAPI tutorial: https://github.com/aniketmaurya/tensorflow-fastapi-starter-pack
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+
+<p align="center">
+  <img src=https://user-images.githubusercontent.com/74935134/181792028-a7b21f9c-618b-45c1-892a-ad2faf0398c5.gif>
+</p>
