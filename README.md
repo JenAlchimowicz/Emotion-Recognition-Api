@@ -219,7 +219,3 @@ There are a few emotion recognition datasets out there. The three considered in 
 - FastAPI tutorial: https://github.com/aniketmaurya/tensorflow-fastapi-starter-pack
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
-
-<p align="center">
-  <img src=https://user-images.githubusercontent.com/74935134/181792028-a7b21f9c-618b-45c1-892a-ad2faf0398c5.gif>
-</p>
