@@ -129,7 +129,7 @@ python scripts/get_model.py
 
 5. Start a local server using uvicorn
 ```
-python api_utility/main.py
+python prediction_api/main.py
 ```
 
 6. Go to the displayed URL (default is ```http://127.0.0.1:8000```)
@@ -156,12 +156,14 @@ python scripts/predict.py
 
 1. Complete steps 1-3
 
-2. Prepare the [fer2013](https://www.kaggle.com/datasets/deadskull7/fer2013) dataset for training
+2. Download fer2013 dataset from [here](https://www.kaggle.com/datasets/deadskull7/fer2013) and place in ```data/raw_data``` directory
+
+3. Prepare the [fer2013](https://www.kaggle.com/datasets/deadskull7/fer2013) dataset for training
 ```
 python scripts/etl.py
 ```
 
-2. Run the training procedure. You can change arguments like number of epochs or learning rate in the ```config.yaml``` file.
+4. Run the training procedure. You can change arguments like number of epochs or learning rate in the ```config.yaml``` file.
 ```
 python scripts/train.py
 ```
