@@ -22,8 +22,9 @@
   <li><a href="#folder-structure"> ➤ Folder Structure</a></li>
   <li><a href="#usage"> ➤ Usage</a></li>
     <ul>
-      <li><a href="#online-api"> Online API</a></li>
-      <li><a href="#local-usage"> Local usage</a></li>
+      <li><a href="#using-api"> Using the API</a></li>
+      <li><a href="#running-scripts"> Running scripts</a></li>
+      <li><a href="#training"> Training a new model</a></li>
     </ul>
     <li><a href="#development-process"> ➤ Development process</a></li>
     <ul>
@@ -32,7 +33,7 @@
       <li><a href="#datasets"> Datasets </a></li>
       <li><a href="#improvement-areas"> Improvement areas </a></li>
     </ul>
-    <li><a href="#key-sources"> ➤ Key sources </a></li>
+    <li><a href="#key-resources"> ➤ Key sources </a></li>
 </ol>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
@@ -101,12 +102,7 @@ Code structure tree, shows the exact content of the project
 
 <h2 id="usage"> :hammer: Usage </h2>
 
-<h3 id="online-api"> Online API </h3>
-Use link: ADD HERE BIG
-
-Example output: ADD IMAGE HERE
-
-<h3 id="local-usage"> Local usage </h3>
+<h3 id="using-api"> :robot: Using the API </h3>
 
 1. Git Clone the repo
 ```
@@ -125,23 +121,55 @@ source venv/bin/activate
 pip install –r requirements.txt
 ```
 
-</br>
+4. Download the weights of pretrained [DAN](https://github.com/yaoing/DAN) model (training from scratch also possible see section xx)
+```
+python scripts/get_model.py
+```
 
-4. **There are 2 ways you can continue from here. You can:**
-  - [**recommended**] Use a pretrained [DAN](https://github.com/yaoing/DAN) model (DAN was trained on [AffectNet](http://mohammadmahoor.com/affectnet/), one of the best emotion recognition datasets available)
-  - [**optional**] Train a new model on [fer2013](https://www.kaggle.com/datasets/deadskull7/fer2013) dataset and use that to make predictions
+5. Start a local server using uvicorn
+```
+python api_utility/main.py
+```
 
-</br>
-    
-  Use a pretrained [DAN](https://github.com/yaoing/DAN) model |  Train a new model
-:----------------------------------------------------:|:----------------------------------------------------:
-| 1. Download the model weights from [here](https://drive.google.com/file/d/1uHNADViICyJEjJljv747nfvrGu12kjtu/view?usp=sharing) <br/><br/>2. Save in ```trained_models``` directory <br/><br/>3. Modify the ```file_path``` in ```config.yaml``` file to the image/video you want to make predictions on <br/><br/>4. Run ```python scripts/predict.py``` | 1. Run ```python scripts/etl.py``` <br/><br/>2. Run ```python scripts/train.py``` (you can modify number of epochs and other parameters in ```config.yaml```) <br/><br/>3. Modify the ```file_path``` in ```config.yaml``` file to <br/>the image/video you want to make predictions on <br/><br/>4. Run ```python scripts/predict.py``` |
+6. Go to the displayed URL (default is ```http://127.0.0.1:8000```)
+
+7. Make predictions. Example output:
+
+API output             |  Running scripts output
+:-------------------------:|:-------------------------:
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <img width="250" src="https://user-images.githubusercontent.com/74935134/181781389-24063ec4-b9c8-40d6-83a8-10284f27aa1f.png"> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> |  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <img width="400" alt="Screenshot 2022-07-29 at 16 38 23" src="https://user-images.githubusercontent.com/74935134/181783667-e4b01e3e-d742-4065-bb65-51a6065582b1.png"> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+
+
+<h3 id="running-scripts"> :books: [ALTERNATIVE] Running scripts </h3>
+
+1. Complete steps 1-4
+
+2. Set ```file_path``` in ```config.yaml``` to your image or video path
+
+3. Run predictions
+```
+python scripts/predict.py
+```
+
+<h3 id="training"> :muscle: [OPTIONAL] Training a new model </h3>
+
+1. Complete steps 1-3
+
+2. Run the training procedure. You can change arguments like number of epochs or learning rate in the ```config.yaml``` file.
+```
+python scripts/train.py
+```
+
+5. Make sure the ```config.yaml``` file points to your new trained model and make predictions as before
+```
+python scripts/predict.py
+```
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-<h2 id="development-process"> :brain: Development process </h2>
+<h2 id="development-process"> :electron: Development process </h2>
 
-<h3 id="methods"> :electron: Methods </h3>
+<h3 id="methods"> :brain: Methods </h3>
 
 Emotion recognition is a two-step process:
   1. Detect faces in an image
@@ -170,11 +198,12 @@ There are a few emotion recognition datasets out there. The three considered in 
 - Experiment with the [Real-world Affective Faces](http://www.whdeng.cn/raf/model1.html) dataset
 - Replace Haar Cascade with e.g. YOLO
 - Increase test coverage
+- Deploy API online
 - Any suggestions are welcome :)
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 
-<h2 id="key-sources"> :open_book: Key sources </h2>
+<h2 id="key-resources"> :open_book: Key resources </h2>
 
 - Structure of the project and key development tools: Geoffrey Hung's articles [here](https://towardsdatascience.com/from-jupyter-notebook-to-sc-582978d3c0c) and [here](https://towardsdatascience.com/from-scripts-to-prediction-api-2372c95fb7c7)
 - DAN paper by Wen, Zhengyao and Lin, Wenzhong and Wang, Tao and Xu, Ge: https://arxiv.org/pdf/2109.07270.pdf
