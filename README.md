@@ -75,6 +75,7 @@ Code structure tree, shows the exact content of the project
 │   ├── config.yml
 │   ├── etl.py
 │   ├── train.py
+│   ├── get_model.py
 │   ├── predict.py
 │   ├── live_predict.py
 │   ├── tests
