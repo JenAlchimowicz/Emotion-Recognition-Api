@@ -4,13 +4,13 @@ etl:
 
 train:
   data_path: "data/train_val_test_split/"
-  epochs: 2
+  epochs: 20
   batch_size: 256
   start_lr: 0.01
   model_path: "trained_models/ED_model0.pt"
 
 predict:
-  file_path: "data/predictions/test.jpg"
+  file_path: "data/predictions/test_img.jpg"
   model_type: "affectnet8"
   model_path: "trained_models/affecnet8.pth"
   export_path: "data/predictions/"
