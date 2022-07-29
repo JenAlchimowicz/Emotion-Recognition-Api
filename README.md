@@ -137,7 +137,7 @@ python api_utility/main.py
 
 API output             |  Running scripts output
 :-------------------------:|:-------------------------:
-<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <img width="250" src="https://user-images.githubusercontent.com/74935134/181781389-24063ec4-b9c8-40d6-83a8-10284f27aa1f.png"> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> |  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <img width="400" alt="Screenshot 2022-07-29 at 16 38 23" src="https://user-images.githubusercontent.com/74935134/181783667-e4b01e3e-d742-4065-bb65-51a6065582b1.png"> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <img width="250" src="https://user-images.githubusercontent.com/74935134/181781389-24063ec4-b9c8-40d6-83a8-10284f27aa1f.png"> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> |  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <img width="400" alt="Screenshot 2022-07-29 at 16 38 23" src="https://user-images.githubusercontent.com/74935134/181783667-e4b01e3e-d742-4065-bb65-51a6065582b1.png"> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
 
 <h3 id="running-scripts"> :books: [ALTERNATIVE] Running scripts </h3>
