@@ -40,14 +40,14 @@
 
 <h2 id="project-description"> :pencil: Project description </h2>
 
-This project identifies faces in an image or video and classifies each face into one of the 7 emotions: ['neutral', 'happy', 'sad', 'surprise', 'fear', 'disgust', 'anger', 'contempt']. For modelling purposes the primary libraries used where PyTorch and OpenCV. For development purposes the primary tools used were pytest, black code formatter, GitHub Actions, FastAPI and Deta.
+This project identifies faces in an image or video and classifies each face into one of the 7 emotions: ['neutral', 'happy', 'sad', 'surprise', 'fear', 'disgust', 'anger', 'contempt']. The primary libraries used for modeling purposes were PyTorch and OpenCV. The primary tools used for development were pytest, black code formatter, GitHub Actions, and FastAPI.
 
   - ```Input:``` image or a video
   - ```Output:``` the input with annotated faces [local usage] or a set of coordinates and annotations for each face [API]
 
-**The aim of the project is twofold.** First, emotion recognition technology is used in various real applications. In marketing it is used to better understand the imapct of marketing material during focus group activities. In healthcare it is used to help individuals with autism better identify the emotions and facial expressions they encounter. The automotive industry is experimenting with computer vision technology to monitor the driver's emotional state. An extreme emotional state or drowsiness could trigger an alert for the driver. Therefore, this project serves to show the level of emotion recognition systems today.
+**The aim of the project is twofold.** First, emotion recognition technology is used in various real applications. In marketing, it is used to better understand the impact of marketing material during focus group activities. In healthcare, it is used to help individuals with autism better identify the emotions and facial expressions they encounter. The automotive industry is experimenting with computer vision technology to monitor the driver's emotional state. An extreme emotional state or drowsiness could trigger an alert for the driver. Therefore, this project serves to show the level of emotion recognition systems today.
 
-Second, the project was developed for learning purposes. Particular emphasis was put on development methods used in the workplace, such as testing, logging, continous integration and developing an API.
+Second, the project was developed for learning purposes. Particular emphasis was put on development methods used in the workplace, such as testing, logging, continuous integration, and developing an API.
 
 </br>
 
@@ -122,7 +122,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Download the weights of pretrained [DAN](https://github.com/yaoing/DAN) model (training from scratch also possible see section xx)
+4. Download the weights of pretrained [DAN](https://github.com/yaoing/DAN) model (training from scratch also possible see section below)
 ```
 python scripts/get_model.py
 ```
@@ -136,7 +136,7 @@ python prediction_api/main.py
 
 7. Make predictions. Example output:
 
-API output             |  Running scripts output
+API output             |  Output from running scripts
 :-------------------------:|:-------------------------:
 <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <img width="250" src="https://user-images.githubusercontent.com/74935134/181781389-24063ec4-b9c8-40d6-83a8-10284f27aa1f.png"> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> |  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <img width="400" alt="Screenshot 2022-07-29 at 16 38 23" src="https://user-images.githubusercontent.com/74935134/181783667-e4b01e3e-d742-4065-bb65-51a6065582b1.png"> <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 
@@ -182,24 +182,24 @@ python scripts/predict.py
 Emotion recognition is a two-step process:
   1. Detect faces in an image
   2. Classify each face into one of the emotions
-  
-In this project I relied heavily on pretrained models. For face dection I relied on [Haar Cascade Classifier](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html), and for emotion classification I relied on [DAN](https://github.com/yaoing/DAN) pretrained on [AffectNet](http://mohammadmahoor.com/affectnet/) dataset. I used Haar Cascade because developing a face detection system was not the goal of this project and Haar Cascade provides a stable, easy to implement solution. I used DAN because it is pretrained on an unaccesible to me dataset, and provides better performance than my own implementations on fer2013 dataset.
+
+In this project, I relied heavily on pre-trained models. For face detection, I relied on [Haar Cascade Classifier](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html), and for emotion classification, I relied on [DAN](https://github.com/yaoing/DAN) pre-trained on [AffectNet](http://mohammadmahoor.com/affectnet/) dataset. I used Haar Cascade because developing a face detection system was not the goal of this project and Haar Cascade provides a stable, easy-to-implement solution. I used DAN because it is pre-trained on an unaccessible to me dataset, and provides better performance than my own implementations on fer2013 dataset.
   
 <h3 id="tools"> :hammer_and_wrench: Tools </h3>
 
-- ```Why PyTorch?``` - most semi-publicly accessible emotion classification datasets are restricted to academics, which mainly use PyTorch. Therefore, I expected to find more good pretrained models available in PyTorch than e.g. Tensorflow
-- ```Why config.yaml?``` - in machine learning the data processing, splitting, transforming has as big of an impact on the final result as the choice of model and training parameters. Since I use separate scripts for each of those steps, one would have to remember which arguments were used to run each of the scripts to be able to reproduce a specific results. A config.yaml file puts all arguments together and ensures easy tracking and reproducability.
-- ```Why logging?``` - logging leaves an easy to track trace of what was happening during a run. We could print out the results to the command line but in case I want to run e.g. 20 models, the print outputs would quickly become messy. Logging is a clean solution to save all the information in separate files.
-- ```Why pytest?``` - testing is crucial for development. Pytest is easy to follow, easy to trace and provides good error reporting.
-- ```Why GitHub actions?``` - this is a small project, therefore, quick set-up and simplicity of use is a big advantage. I believed it to be the right tool for the job
-- ```Why black?``` - clarity and standardization make it easier for everyone to read code
+- ```Why PyTorch?``` - most semi-publicly accessible emotion classification datasets are restricted to academics, which mainly use PyTorch. Therefore, I expected to find more good pre-trained models available in PyTorch than e.g. Tensorflow.
+- ```Why config.yaml?``` - in machine learning the data processing, transforming, and splitting have as big of an impact on the final result as the choice of model and training parameters. Since I use separate scripts for each of those steps, one would have to remember which arguments were used to run each of the scripts to be able to reproduce a specific result. A config.yaml file puts all arguments together and ensures easy tracking and reproducibility.
+- ```Why logging?``` - logging leaves an easy-to-track trace of what was happening during a run. We could print out the results to the command line but in case I want to run e.g. 20 models, the print outputs would quickly become messy. Logging is a clean solution to save all the information in separate files.
+- ```Why pytest?``` - testing is crucial for development. Pytest is easy to follow, easy to trace, and provides good error reporting.
+- ```Why GitHub actions?``` - tthis is a small project, therefore, quick set-up and simplicity of use is a big advantages. I believed it to be the right tool for the job.
+- ```Why black?``` - clarity and standardization make it easier for everyone to read code.
 
 <h3 id="datasets"> :floppy_disk: Datasets </h3>
 
 There are a few emotion recognition datasets out there. The three considered in the project were:
-- [fer2013](https://www.kaggle.com/datasets/deadskull7/fer2013) [publicly available] - a datset of 35k grayscale 48x48 images annotated with one of 7 emotions. The dataset suffers from a large amount of mislabeled data and the low quality of input images (grayscale and small size).
+- [fer2013](https://www.kaggle.com/datasets/deadskull7/fer2013) [publicly available] - a dataset of 35k 48x48 grayscale images annotated with one of 7 emotions. The dataset suffers from a large amount of mislabeled data and the low quality of input images (grayscale and small size).
 - [AffectNet](http://mohammadmahoor.com/affectnet/) [available to academics only] - a dataset of 440K RGB images annotated for one of 7 emotions along with the intensity of valence and arousal. State of the art. **Currently unavailable to me**.
-- [Real-world Affective Faces](http://www.whdeng.cn/raf/model1.html) [available to academics only] - a dataset of 30k RGB images annotated for two of the most prelevant of 7 emotions. **Recently gained access to this dataset**.
+- [Real-world Affective Faces](http://www.whdeng.cn/raf/model1.html) [available to academics only] - a dataset of 30k RGB images annotated for two of the most relevant of 7 emotions. **Recently gained access to this dataset**.
 
 <h3 id="improvement-areas"> :rocket: Improvement areas </h3>
 
