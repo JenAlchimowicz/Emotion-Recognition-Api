@@ -183,7 +183,7 @@ Emotion recognition is a two-step process:
   1. Detect faces in an image
   2. Classify each face into one of the emotions
 
-In this project, I relied heavily on pre-trained models. For face detection, I relied on [Haar Cascade Classifier](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html), and for emotion classification, I relied on [DAN](https://github.com/yaoing/DAN) pre-trained on [AffectNet](http://mohammadmahoor.com/affectnet/) dataset. I used Haar Cascade because developing a face detection system was not the goal of this project and Haar Cascade provides a stable, easy-to-implement solution. I used DAN because it is pre-trained on an unaccessible to me dataset, and provides better performance than my own implementations on fer2013 dataset.
+In this project, I relied heavily on pre-trained models. For face detection, I relied on [Haar Cascade Classifier](https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html), and for emotion classification, I relied on [DAN](https://github.com/yaoing/DAN) pre-trained on [AffectNet](http://mohammadmahoor.com/affectnet/) dataset. I used Haar Cascade because developing a face detection system was not the goal of this project and Haar Cascade provides a stable, easy-to-implement solution. I used DAN because it is pre-trained on an unaccessible to me dataset, and provides better performance than my own implementations trained on the fer2013 dataset.
   
 <h3 id="tools"> :hammer_and_wrench: Tools </h3>
 
@@ -191,7 +191,7 @@ In this project, I relied heavily on pre-trained models. For face detection, I r
 - ```Why config.yaml?``` - in machine learning the data processing, transforming, and splitting have as big of an impact on the final result as the choice of model and training parameters. Since I use separate scripts for each of those steps, one would have to remember which arguments were used to run each of the scripts to be able to reproduce a specific result. A config.yaml file puts all arguments together and ensures easy tracking and reproducibility.
 - ```Why logging?``` - logging leaves an easy-to-track trace of what was happening during a run. We could print out the results to the command line but in case I want to run e.g. 20 models, the print outputs would quickly become messy. Logging is a clean solution to save all the information in separate files.
 - ```Why pytest?``` - testing is crucial for development. Pytest is easy to follow, easy to trace, and provides good error reporting.
-- ```Why GitHub actions?``` - tthis is a small project, therefore, quick set-up and simplicity of use is a big advantages. I believed it to be the right tool for the job.
+- ```Why GitHub actions?``` - this is a small project, therefore, quick set-up and simplicity of use is a big advantages. I believed it to be the right tool for the job.
 - ```Why black?``` - clarity and standardization make it easier for everyone to read code.
 
 <h3 id="datasets"> :floppy_disk: Datasets </h3>
